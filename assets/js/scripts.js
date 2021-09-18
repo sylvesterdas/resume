@@ -362,7 +362,7 @@ jQuery(function ($) {
             ];
 
             var mapOptions = {
-                zoom: 18,
+                zoom: 15,
                 scrollwheel: false,
                 center: myLatlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
