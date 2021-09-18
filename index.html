@@ -1498,5 +1498,28 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDePhvLW-EQAc9iFy2l3wfU0gXogCsiftE"
     ></script>
     <script src="assets/js/scripts.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDRVlkwWl8uABQyREniUGqaynOcTDV2xF4",
+        authDomain: "sylvester-das-resume.firebaseapp.com",
+        projectId: "sylvester-das-resume",
+        storageBucket: "sylvester-das-resume.appspot.com",
+        messagingSenderId: "1024862903446",
+        appId: "1:1024862903446:web:250d2e39e09e46d3da76b7",
+        measurementId: "G-TM4L1XGVB5"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
