@@ -35,6 +35,9 @@ jQuery(function ($) {
     });
 
 
+    window.addEventListener('wheel', function (e) {
+        // if (e?.preventDefault) e.preventDefault();
+    }, { passive: false });
 
 
     // -------------------------------------------------------------
@@ -327,7 +330,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
 
     (function () {
-        var myLatlng = new google.maps.LatLng(18.9067, 72.8147);
+        var myLatlng = new google.maps.LatLng(19.4567142, 72.8062872);
 
             var styles = [
                 {
@@ -336,9 +339,8 @@ jQuery(function ($) {
                         { color: '#f7f7f7' }
                     ]
                 },{
-                    featureType: "natural",
                     stylers: [
-                        { hue: '#00ffe6' }
+                        { hue: '#68c3a3' }
                     ]
                 },{
                     featureType: "road",
@@ -347,7 +349,6 @@ jQuery(function ($) {
                         { saturation: -70 }
                     ]
                 },{
-                    featureType: "building",
                     elementType: "labels",
                     stylers: [
                         { hue: '' }
@@ -361,7 +362,7 @@ jQuery(function ($) {
             ];
 
             var mapOptions = {
-                zoom: 15,
+                zoom: 18,
                 scrollwheel: false,
                 center: myLatlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -374,7 +375,7 @@ jQuery(function ($) {
                 position: myLatlng,
                 map: map,
                 animation: google.maps.Animation.DROP,
-                title: 'Hello World!'
+                title: 'Location'
             });
 
             var contentString = '' +
@@ -385,9 +386,10 @@ jQuery(function ($) {
                 content: contentString
             });
 
-            google.maps.event.addListener(marker, 'click', function () {
+            google.maps.event.addListener(marker, 'click', function (e) {
+                if (e?.preventDefault) e.preventDefault();
                 infowindow.open(map, marker);
-            });
+            }, { passive: false });
 
     }());
 
