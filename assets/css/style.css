@@ -268,10 +268,6 @@ ul, ol {
 }
 
 
-ul.list-check {
-    
-}
-
 ul.list-check li{
     position: relative;
     font-size: 18px;
@@ -1248,6 +1244,7 @@ Resume Timeline
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   /* ideally, transition speed should match zoom duration */
   -webkit-transition: all 0.3s ease-out; 
   -moz-transition: all 0.3s ease-out; 
@@ -1299,9 +1296,6 @@ Resume Timeline
 }
 
 /* === Blog Section === */
-.latest-blog-section {
-  
-}
 .blog-post-wrapper {
     padding: 4px;
     border: 1px solid #eee;
@@ -1359,9 +1353,7 @@ Resume Timeline
 .entry-header {
     padding: 0 12px;
 }
-.post-meta {
 
-}
 .the-category a {
     font-size: 12px;
     line-height: 28px;
@@ -1461,10 +1453,6 @@ Icon for all respective meta
 
 
 /* === Contact Section === */
-.contact-section  {
-  
-}
-
 .contact-section strong {
     display: block;
     text-transform: uppercase;
