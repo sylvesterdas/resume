@@ -824,6 +824,10 @@ Resume Timeline
     font-weight: 700;
     margin-bottom: 20px;
 }
+.timeline-heading span a{
+    min-width: 48px;
+    min-height: 48px;
+}
 
 
 
