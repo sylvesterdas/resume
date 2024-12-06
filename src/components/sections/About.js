@@ -21,31 +21,32 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content section remains the same */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#8FBC8F]">Professional Overview</h3>
-              <p className="text-gray-300 leading-relaxed">
-                I specialize in MEAN/MERN stack development with a focus on creating high-performance, scalable applications. With extensive experience in both web and mobile development, I bring a comprehensive approach to every project.
-              </p>
-            </div>
+          <div className="space-y-8">
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold text-[#8FBC8F]">Professional Overview</h3>
+        <p className="text-gray-300 leading-relaxed">
+          As a Senior Software Engineer specializing in enterprise solutions, I bring extensive experience in architecting and delivering scalable applications that drive business transformation. With deep expertise in MEAN/MERN stack development, I focus on creating high-performance systems that adapt to evolving business needs while maintaining exceptional code quality and user experience.
+        </p>
+      </div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#8FBC8F]">Technical Expertise</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  'Hybrid Mobile Apps',
-                  'Angular Development',
-                  'Firebase Solutions',
-                  'NodeJS/MongoDB',
-                  'React/Next.js',
-                  'Electron Apps'
-                ].map((skill, index) => (
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold text-[#8FBC8F]">Technical Philosophy</h3>
+        <p className="text-gray-300 leading-relaxed">
+          My approach combines strategic system design with practical implementation expertise. I believe in building solutions that not only meet current requirements but are also engineered for future scalability. Through my experience with cloud platforms and modern development frameworks, I deliver robust applications that provide measurable business value.
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold text-[#8FBC8F]">Core Competencies</h3>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            'Enterprise Architecture',
+            'Cloud Solutions',
+            'System Integration',
+            'Performance Optimization',
+            'Technical Leadership',
+            'Innovation Strategy'
+          ].map((skill, index) => (
                   <motion.div
                     key={index}
                     className="flex items-center space-x-2 text-gray-300"
@@ -60,7 +61,7 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Updated image container */}
           <motion.div

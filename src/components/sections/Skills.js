@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function Skills() {
   const technicalSkills = [
@@ -20,6 +21,59 @@ export default function Skills() {
     { name: 'Motivation', level: 100 }
   ]
 
+  const CircularProgress = ({ skill, index }) => {
+    const [isVisible, setIsVisible] = useState(false)
+    const circumference = 2 * Math.PI * 15.915
+    const strokeDashoffset = circumference - (isVisible ? skill.level : 0) / 100 * circumference
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="text-center"
+        onViewportEnter={() => setIsVisible(true)}
+      >
+        <div className="relative w-24 h-24 mx-auto mb-4">
+          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+            <circle
+              cx="18"
+              cy="18"
+              r="15.915"
+              fill="none"
+              stroke="#2F4F4F"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <motion.circle
+              cx="18"
+              cy="18"
+              r="15.915"
+              fill="none"
+              stroke="#8FBC8F"
+              strokeWidth="2"
+              strokeLinecap="round"
+              initial={{ strokeDasharray: circumference, strokeDashoffset: circumference }}
+              animate={{ strokeDashoffset }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+            />
+            <text
+              x="18"
+              y="18"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-[#8FBC8F] text-[6px]"
+            >
+              {`${isVisible ? skill.level : 0}%`}
+            </text>
+          </svg>
+        </div>
+        <span className="text-white text-sm">{skill.name}</span>
+      </motion.div>
+    )
+  }
+
   return (
     <section id="skills" className="py-24 bg-[#2F4F4F]">
       <div className="container mx-auto px-6">
@@ -36,7 +90,6 @@ export default function Skills() {
           </div>
         </motion.h2>
 
-        {/* Technical Skills Grid */}
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-6 mb-20">
           {technicalSkills.map((skill, index) => (
             <motion.div 
@@ -64,50 +117,11 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* More Skills Title */}
         <h3 className="text-2xl font-bold text-center mb-12 text-white">MORE SKILLS</h3>
 
-        {/* Circular Progress Bars */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           {softSkills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
-            >
-              <div className="relative w-24 h-24 mx-auto mb-4">
-                <svg className="w-full h-full" viewBox="0 0 36 36">
-                  <path
-                    d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#2F4F4F"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <motion.path
-                    d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#8FBC8F"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    initial={{ strokeDasharray: `${skill.level}, 100` }}
-                    whileInView={{ strokeDasharray: `${skill.level}, 100` }}
-                    viewport={{ once: true }}
-                  />
-                  <text x="18" y="20.35" className="text-white text-[6px]" textAnchor="middle">
-                    {`${skill.level}%`}
-                  </text>
-                </svg>
-              </div>
-              <span className="text-white text-sm">{skill.name}</span>
-            </motion.div>
+            <CircularProgress key={skill.name} skill={skill} index={index} />
           ))}
         </div>
       </div>
