@@ -64,7 +64,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="h-screen relative overflow-hidden bg-[#2F4F4F]">
+    <section id="home" className="h-screen relative overflow-hidden bg-[#2F4F4F]">
       <canvas
         ref={canvasRef}
         className="absolute inset-0"

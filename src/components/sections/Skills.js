@@ -63,7 +63,8 @@ export default function Skills() {
               y="18"
               dominantBaseline="middle"
               textAnchor="middle"
-              className="text-[#8FBC8F] text-[6px]"
+              fill="#8FBC8F"
+              className="text-[6px]"
             >
               {`${isVisible ? skill.level : 0}%`}
             </text>

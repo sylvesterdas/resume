@@ -109,7 +109,7 @@ export default function Experience() {
                   {edu.year}
                 </div>
                 <div className="bg-[#2F4F4F]/30 p-6 rounded-lg">
-                  <h4 className="text-white font-bold mb-2">{edu.title}</h4>
+                  <h4 className="text-white font-bold mb-2 uppercase">{edu.title}</h4>
                   <p className="text-[#8FBC8F] mb-2">{edu.institution}</p>
                   <p className="text-gray-400 text-sm">{edu.description}</p>
                 </div>
@@ -141,7 +141,7 @@ export default function Experience() {
                   {exp.period}
                 </div>
                 <div className="bg-[#2F4F4F]/30 p-6 rounded-lg">
-                  <h4 className="text-white font-bold mb-2">{exp.title}</h4>
+                  <h4 className="text-white font-bold mb-2 uppercase">{exp.title}</h4>
                   <p className="text-[#8FBC8F] mb-2">{exp.company}</p>
                   <p className="text-gray-400 text-sm">{exp.description}</p>
                 </div>

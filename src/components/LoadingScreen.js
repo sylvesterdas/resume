@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function LoadingScreen() {
   return (
@@ -12,13 +13,22 @@ export default function LoadingScreen() {
     >
       <div className="text-center">
         <motion.div
-          className="text-[#8FBC8F] text-4xl font-bold mb-4"
+          className="mb-4"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          SD
-          <div className="w-full h-0.5 bg-[#8FBC8F] mt-2">
+          <div className="w-12 h-12 mx-auto mb-4">
+            <Image
+              src="/favicon.ico"
+              alt="Sylvester Das"
+              width={48}
+              height={48}
+              className="object-contain brightness-0 invert"
+              priority
+            />
+          </div>
+          <div className="w-24 h-0.5 bg-[#8FBC8F] mx-auto">
             <motion.div
               className="h-full bg-white"
               initial={{ width: '0%' }}
