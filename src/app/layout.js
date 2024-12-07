@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
 import Navigation from '@/components/layout/Navigation'
-import LoadingScreen from '@/components/LoadingScreen'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/seo';
@@ -38,7 +37,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <LoadingScreen />
         <Navigation />
         {children}
         <Analytics />
