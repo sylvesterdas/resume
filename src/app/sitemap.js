@@ -1,20 +1,28 @@
-import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/seo';
+export default async function sitemap() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sylvesterdas.com';
 
-/** @type {MetadataRoute.Sitemap} */
-export default function sitemap() {
+  // Core pages that are always present
   const routes = [
     '',
     '/about',
-    '/experience',
     '/skills',
-    '/contact'
+    '/experience',
+    '/contact',
   ].map(route => ({
-    url: `${siteConfig.siteUrl}${route}`,
+    url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
-    changeFrequency: 'monthly',
+    changeFrequency: route === '' ? 'weekly' : 'monthly',
     priority: route === '' ? 1 : 0.8,
   }));
 
-  return routes;
+  // If you have dynamic project pages, you can add them like this:
+  // const projects = await getProjects();
+  // const projectRoutes = projects.map(project => ({
+  //   url: `${baseUrl}/projects/${project.slug}`,
+  //   lastModified: project.updatedAt,
+  //   changeFrequency: 'monthly',
+  //   priority: 0.6,
+  // }));
+
+  return [...routes];
 }
