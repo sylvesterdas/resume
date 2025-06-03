@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/seo';
 import { generatePersonJsonLd } from '@/lib/generateJsonLd';
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -40,6 +41,12 @@ export default function RootLayout({ children }) {
         <Navigation />
         {children}
         <Analytics />
+
+        {/* LinkedIn Badge Script */}
+        <Script
+          src="https://platform.linkedin.com/badges/js/profile.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
