@@ -23,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: post.canonicalUrl || post.url,
       type: 'article',
       publishedTime: post.publishedAt,
+      authors: [post.author.name],
       images: post.coverImage ? [{ url: post.coverImage.url }] : [],
     },
     twitter: {
