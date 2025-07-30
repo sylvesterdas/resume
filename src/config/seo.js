@@ -21,6 +21,7 @@ export const siteConfig = {
     },
     twitter: {
       handle: "@sylvester_das",
-      cardType: "summary_large_image"
+      cardType: "summary_large_image",
+      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/images/general/og.png`],
     }
   };
