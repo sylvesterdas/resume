@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 
-export default function Experience() {
+export default function Resume() {
   const education = [
     {
       year: "2010",
@@ -58,7 +58,7 @@ export default function Experience() {
       period: "2020 - 2021",
       title: "Senior Software Engineer",
       company: "Scitara Technologies Pvt. Ltd., Mumbai, IN",
-      description: "Scitara is a global provider of laboratory-specific, cloud-based software solutions for the life sciences and other science-based industries.. Planned, developed and managed end-to-end MS OneDrive connector. Planned, developed and managed end-to-end MS Excel connector. Planned, developed and managed end-to-end IDBS connector. Developed some frontend components in ReactJS"
+      description: "Scitara is a global provider of laboratory-based, cloud-based software solutions for the life sciences and other science-based industries.. Planned, developed and managed end-to-end MS OneDrive connector. Planned, developed and managed end-to-end MS Excel connector. Planned, developed and managed end-to-end IDBS connector. Developed some frontend components in ReactJS"
     },
     {
       period: "2022 - ...",
@@ -69,25 +69,28 @@ export default function Experience() {
   ]
 
   return (
-    <section id="resume" className="py-24 bg-[#1A2F2F]">
+    <section id="resume" className="py-24 bg-primary-dark">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl font-bold text-center mb-20 text-white"
+          className="text-4xl font-bold text-center mb-20 text-text"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           RESUME
           <div className="flex items-center justify-center mt-4">
-            <div className="w-2 h-2 bg-[#8FBC8F] mx-1"></div>
-            <div className="w-2 h-2 bg-[#8FBC8F] mx-1"></div>
+            <div className="w-2 h-2 bg-accent mx-1"></div>
+            <div className="w-2 h-2 bg-accent mx-1"></div>
           </div>
         </motion.h2>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-accent h-full hidden md:block"></div>
+
           {/* Education Section */}
           <motion.h3 
-            className="text-xl text-white mb-12"
+            className="absolute left-1/2 transform -translate-x-1/2 text-xl text-text px-4 bg-primary-dark z-20 whitespace-nowrap"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -95,23 +98,31 @@ export default function Experience() {
             EDUCATION
           </motion.h3>
 
-          <div className="space-y-12 mb-20">
+          <div className="mb-20">
             {education.map((edu, index) => (
               <motion.div 
                 key={index}
-                className="grid grid-cols-[100px_1fr] gap-8"
-                initial={{ opacity: 0, x: -20 }}
+                className={`relative flex flex-col md:flex-row items-center w-full ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="text-[#8FBC8F] font-medium">
-                  {edu.year}
+                {/* Content Box */}
+                <div className={`w-full md:w-1/2 p-4 ${index % 2 === 0 ? 'md:pr-24' : 'md:pl-24'}`}>
+                  <div className="bg-primary/30 p-6 rounded-lg shadow-lg">
+                    <h4 className="text-text font-bold mb-2 uppercase">{edu.title}</h4>
+                    <p className="text-accent mb-2">{edu.institution}</p>
+                    <p className="text-text-muted text-sm">{edu.description}</p>
+                  </div>
                 </div>
-                <div className="bg-[#2F4F4F]/30 p-6 rounded-lg">
-                  <h4 className="text-white font-bold mb-2 uppercase">{edu.title}</h4>
-                  <p className="text-[#8FBC8F] mb-2">{edu.institution}</p>
-                  <p className="text-gray-400 text-sm">{edu.description}</p>
+
+                {/* Year and Dot */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center">
+                  <div className="w-4 h-4 bg-accent rounded-full z-10"></div>
+                  <div className="text-accent font-medium text-lg px-2 bg-primary-dark z-20 whitespace-nowrap">
+                    {edu.year}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -119,7 +130,7 @@ export default function Experience() {
 
           {/* Experience Section */}
           <motion.h3 
-            className="text-xl text-white mb-12"
+            className="absolute left-1/2 transform -translate-x-1/2 text-xl text-text px-4 bg-primary-dark z-20 whitespace-nowrap"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -127,23 +138,31 @@ export default function Experience() {
             EXPERIENCE
           </motion.h3>
 
-          <div className="space-y-12">
+          <div>
             {experience.map((exp, index) => (
               <motion.div 
                 key={index}
-                className="grid grid-cols-[100px_1fr] gap-8"
-                initial={{ opacity: 0, x: -20 }}
+                className={`relative flex flex-col md:flex-row items-center w-full ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="text-[#8FBC8F] font-medium">
-                  {exp.period}
+                {/* Content Box */}
+                <div className={`w-full md:w-1/2 p-4 ${index % 2 === 0 ? 'md:pr-24' : 'md:pl-24'}`}>
+                  <div className="bg-primary/30 p-6 rounded-lg shadow-lg">
+                    <h4 className="text-text font-bold mb-2 uppercase">{exp.title}</h4>
+                    <p className="text-accent mb-2">{exp.company}</p>
+                    <p className="text-text-muted text-sm">{exp.description}</p>
+                  </div>
                 </div>
-                <div className="bg-[#2F4F4F]/30 p-6 rounded-lg">
-                  <h4 className="text-white font-bold mb-2 uppercase">{exp.title}</h4>
-                  <p className="text-[#8FBC8F] mb-2">{exp.company}</p>
-                  <p className="text-gray-400 text-sm">{exp.description}</p>
+
+                {/* Year and Dot */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center">
+                  <div className="w-4 h-4 bg-accent rounded-full z-10"></div>
+                  <div className="text-accent font-medium text-lg px-2 bg-primary-dark z-20 whitespace-nowrap">
+                    {exp.period}
+                  </div>
                 </div>
               </motion.div>
             ))}

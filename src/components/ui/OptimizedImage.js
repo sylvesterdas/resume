@@ -17,7 +17,7 @@ export default function OptimizedImage({ src, alt, ...props }) {
         } ${props.className || ''}`}
       />
       {isLoading && (
-        <div className="absolute inset-0 bg-[#2F4F4F]/20 animate-pulse" />
+        <div className="absolute inset-0 bg-primary-DEFAULT/20 animate-pulse" />
       )}
     </div>
   )

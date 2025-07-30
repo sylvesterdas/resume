@@ -12,7 +12,7 @@ export const siteConfig = {
       siteName: "Sylvester Das Portfolio",
       images: [
         {
-          url: "/images/sylvester-das-og-image.png",
+          url: "/images/general/og.png",
           width: 1200,
           height: 630,
           alt: "Sylvester Das - Senior Software Engineer"

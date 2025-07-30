@@ -9,16 +9,23 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2F4F4F',
-          dark: '#1A2F2F'
+          DEFAULT: '#1A362F',
+          dark: '#0F1F1A'
         },
-        accent: '#8FBC8F',
+        accent: {
+          DEFAULT: '#00A86B',
+          dark: '#008C5A'
+        },
         text: {
-          DEFAULT: '#FFFFFF',
-          muted: '#E5E5E5'
+          DEFAULT: '#E0FFE0',
+          muted: '#A0C0A0'
         }
-      }
+      },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+      },
     }
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

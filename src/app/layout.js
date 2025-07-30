@@ -1,13 +1,20 @@
 import { Analytics } from '@vercel/analytics/react'
 import Navigation from '@/components/layout/Navigation'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/seo';
 import { generatePersonJsonLd } from '@/lib/generateJsonLd';
 import Script from 'next/script'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const geistSans = localFont({
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+})
+const geistMono = localFont({
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+})
 
 /** @type {Metadata} */
 export const metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <Navigation />
         {children}
         <Analytics />
