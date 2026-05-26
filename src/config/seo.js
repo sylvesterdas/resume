@@ -1,12 +1,14 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sylvesterdas.com";
+
 export const siteConfig = {
     title: "Sylvester Das | Senior Software Engineer & Enterprise Solutions Architect",
     description: "Experienced software engineer specializing in enterprise solutions, cloud architecture, and scalable applications. Expert in React, Node.js, and cloud technologies.",
     keywords: "software engineer, enterprise solutions, cloud architecture, React developer, Node.js expert, full-stack developer, tech lead",
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
+    siteUrl,
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: process.env.NEXT_PUBLIC_SITE_URL,
+      url: siteUrl,
       title: "Sylvester Das | Senior Software Engineer",
       description: "Enterprise solutions specialist with expertise in scalable architectures",
       siteName: "Sylvester Das Portfolio",
@@ -22,6 +24,6 @@ export const siteConfig = {
     twitter: {
       handle: "@sylvester_das",
       cardType: "summary_large_image",
-      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/images/general/og.png`],
+      images: [`${siteUrl}/images/general/og.png`],
     }
   };

@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/react'
 import Navigation from '@/components/layout/Navigation'
 import localFont from 'next/font/local'
-import { Metadata } from 'next';
 import { siteConfig } from '@/config/seo';
 import { generatePersonJsonLd } from '@/lib/generateJsonLd';
 import Script from 'next/script'
@@ -16,7 +15,7 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
 })
 
-/** @type {Metadata} */
+/** @type {import('next').Metadata} */
 export const metadata = {
   metadataBase: siteConfig.siteUrl,
   title: {
