@@ -17,6 +17,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.hashnode.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.minifyn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'minifyn.com',
+      },
     ],
   },
   env: {

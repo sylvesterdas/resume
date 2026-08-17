@@ -2,8 +2,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sylvesterdas.co
 
 export const siteConfig = {
     title: "Sylvester Das | Senior Software Engineer & Enterprise Solutions Architect",
-    description: "Experienced software engineer specializing in enterprise solutions, cloud architecture, and scalable applications. Expert in React, Node.js, and cloud technologies.",
-    keywords: "software engineer, enterprise solutions, cloud architecture, React developer, Node.js expert, full-stack developer, tech lead",
+    description: "Experienced software engineer and solutions architect specializing in enterprise systems, cloud architecture, scalable full-stack applications, and on-device mobile tools.",
+    keywords: "software engineer, enterprise solutions, cloud architecture, Next.js developer, React developer, Node.js expert, Android developer, full-stack developer, Minifyn, ScamGuard, CensorFyn, ClipFyn, tech lead",
     siteUrl,
     openGraph: {
       type: "website",

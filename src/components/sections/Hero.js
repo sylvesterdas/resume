@@ -32,7 +32,7 @@ export default function Hero() {
       const primaryColor = rootStyles.getPropertyValue('--color-primary').trim();
       const textColor = rootStyles.getPropertyValue('--color-text').trim();
 
-      ctx.fillStyle = `rgba(${primaryColor}, 0.05)`;
+      ctx.fillStyle = `rgba(${primaryColor}, 0.08)`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = `rgb(${textColor})`;
@@ -55,11 +55,17 @@ export default function Hero() {
       }
     }
 
-    const animate = () => {
-      matrix()
+    let lastTime = 0
+    const frameInterval = 50 // ms per drop step (20 fps for classic Matrix pace)
+
+    const animate = (currentTime) => {
       animationFrameId = requestAnimationFrame(animate)
+      if (currentTime - lastTime >= frameInterval) {
+        matrix()
+        lastTime = currentTime
+      }
     }
-    animate()
+    animationFrameId = requestAnimationFrame(animate)
 
     return () => {
       window.removeEventListener('resize', resizeCanvas)

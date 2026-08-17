@@ -17,17 +17,26 @@ const navigationData = {
     { id: 'about', label: 'About', type: 'scroll', target: 'about' },
     { id: 'skills', label: 'Skills', type: 'scroll', target: 'skills' },
     { id: 'resume', label: 'Resume', type: 'scroll', target: 'resume' },
+    { id: 'projects', label: 'Projects', type: 'scroll', target: 'projects' },
     { id: 'contact', label: 'Contact', type: 'scroll', target: 'contact' },
     { id: 'blog', label: 'Blog', type: 'link', path: '/blog' }
   ]
 }
 
 export default function Navigation() {
-  const [activeSection, setActiveSection] = useState('home')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+  const [activeSection, setActiveSection] = useState(() => {
+    if (pathname === '/') return 'home'
+    if (pathname.startsWith('/blog')) return 'blog'
+    return ''
+  })
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (pathname !== '/') {
+      return
+    }
+
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]')
       let currentActive = 'home'
@@ -48,17 +57,9 @@ export default function Navigation() {
       setActiveSection(currentActive)
     }
 
-    // Set active section based on pathname for non-scroll links first
-    if (pathname === '/') {
-      setActiveSection('home')
-      // Only add scroll listener if on the homepage
-      window.addEventListener('scroll', handleScroll)
-      handleScroll() // Set initial active section based on scroll
-    } else if (pathname.startsWith('/blog')) {
-      setActiveSection('blog')
-    } else {
-      setActiveSection('') // No active section for other pages
-    }
+    // Only add scroll listener if on the homepage
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Set initial active section based on scroll
 
     return () => {
       window.removeEventListener('scroll', handleScroll)

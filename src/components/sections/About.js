@@ -101,7 +101,7 @@ export default function About() {
                 alt="Sylvester Das"
                 width={400}
                 height={400}
-                className="rounded-lg object-cover object-center relative z-10"
+                className="rounded-lg object-cover object-center relative z-10 w-full h-auto"
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
               />

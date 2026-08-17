@@ -7,7 +7,8 @@ export function generatePersonJsonLd() {
       url: process.env.NEXT_PUBLIC_SITE_URL,
       sameAs: [
         'https://www.linkedin.com/in/sylvesterdas/',
-        'https://github.com/sylvesterdas'
+        'https://github.com/sylvesterdas',
+        'https://www.minifyn.com'
       ],
       worksFor: {
         '@type': 'Organization',
@@ -17,9 +18,13 @@ export function generatePersonJsonLd() {
         'Software Engineering',
         'Enterprise Solutions Architecture',
         'Cloud Computing',
+        'Next.js',
         'React',
         'Node.js',
-        'Full Stack Development'
+        'Android App Development',
+        'Full Stack Development',
+        'On-Device AI & Media Processing',
+        'Cybersecurity & Threat Detection'
       ],
       alumniOf: {
         '@type': 'Organization',
