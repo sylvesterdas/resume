@@ -6,8 +6,6 @@ import Projects from '@/components/sections/Projects'
 import Contact from '@/components/sections/Contact'
 import { getMinifynProjects } from '@/lib/minifyn'
 
-export const revalidate = 86400
-
 export default async function Home() {
   const projects = await getMinifynProjects()
 

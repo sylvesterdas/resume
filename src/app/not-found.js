@@ -1,8 +1,18 @@
 import Link from 'next/link'
 
+// GitHub Pages serves this page for unknown paths and can't send 301s,
+// so old /blog URLs are forwarded to the MiniFyn blog from the browser.
+const blogRedirect = `
+  var p = location.pathname;
+  if (p === '/blog' || p.indexOf('/blog/') === 0) {
+    location.replace('https://www.minifyn.com' + p + location.search + location.hash);
+  }
+`
+
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center bg-[#2F4F4F] text-white">
+      <script dangerouslySetInnerHTML={{ __html: blogRedirect }} />
       <h1 className="text-7xl md:text-8xl font-bold mb-6 tracking-tight">
         <span className="text-white">404</span>
       </h1>

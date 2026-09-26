@@ -7,7 +7,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Static export for GitHub Pages: no server, so no ISR, redirects or image optimization.
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -25,12 +28,6 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL
-  },
-  async redirects() {
-    return [
-      { source: '/blog', destination: 'https://www.minifyn.com/blog', permanent: true },
-      { source: '/blog/:slug*', destination: 'https://www.minifyn.com/blog/:slug*', permanent: true },
-    ];
   },
 };
 

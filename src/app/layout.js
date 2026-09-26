@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react'
 import Navigation from '@/components/layout/Navigation'
 import localFont from 'next/font/local'
 import { siteConfig } from '@/config/seo';
@@ -46,7 +45,6 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <Navigation />
         {children}
-        <Analytics />
 
         {/* LinkedIn Badge Script */}
         <Script
