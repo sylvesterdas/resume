@@ -1,12 +1,10 @@
 import Link from 'next/link'
 
-// GitHub Pages serves this page for unknown paths and can't send 301s,
-// so old /blog URLs are forwarded to the MiniFyn blog from the browser.
+// GitHub Pages serves this page for unknown paths and can't send 301s, so old
+// /blog URLs are forwarded to the MiniFyn blog from the browser.
 const blogRedirect = `
   var p = location.pathname;
-  if (p === '/blog' || p.indexOf('/blog/') === 0) {
-    location.replace('https://www.minifyn.com' + p + location.search + location.hash);
-  }
+  if (p === '/blog' || p.indexOf('/blog/') === 0) location.replace('https://www.minifyn.com' + p);
 `
 
 export default function NotFound() {
