@@ -1,121 +1,77 @@
-# Sylvester Das — Portfolio & Developer Resume
+<div align="center">
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![pnpm](https://img.shields.io/badge/pnpm-10.32-F69220?style=flat-square&logo=pnpm&logoColor=white)](https://pnpm.io/)
-[![License](https://img.shields.io/badge/License-Private-green?style=flat-square)](LICENSE)
+# Sylvester Das
+### Senior Software Engineer & Enterprise Solutions Architect
 
-Personal developer portfolio and resume website of **Sylvester Das** — Senior Software Engineer & Enterprise Solutions Architect.
+**I design and build scalable systems that businesses run on, from enterprise lab-data integrations to privacy-first apps on the Play Store.**
 
-🌐 **Live Website**: [https://www.sylvesterdas.com](https://www.sylvesterdas.com)
+<a href="https://www.linkedin.com/in/sylvesterdas/">
+  <img src="https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" />
+</a>
+<a href="https://www.sylvesterdas.com">
+  <img src="https://img.shields.io/badge/View_full_resume-000000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="View full resume" />
+</a>
 
----
+[sylvesterdas.com](https://www.sylvesterdas.com) · [LinkedIn](https://www.linkedin.com/in/sylvesterdas/) · [Credly certifications](https://www.credly.com/users/sylvester-das) · [GitHub](https://github.com/sylvesterdas)
 
-## ✨ Features
-
-- **Interactive Matrix Hero**: Custom HTML5 canvas animation running a smooth, throttled digital rain effect.
-- **Modern App Router Architecture**: Built with Next.js 16 (Turbopack) and React 19 for instantaneous page loads and low Time to First Byte (TTFB).
-- **Personal Projects Showcase**: Highlights privacy-first, on-device mobile tools developed under [Minifyn](https://www.minifyn.com) (*ScamGuard*, *CensorFyn*, *ClipFyn*).
-- **Micro-Animations & Smooth Motion**: Fluid transitions and scroll-driven reveals built with Framer Motion.
-- **Enterprise SEO & Structured Data**: `sitemap.xml`, `robots.txt`, OpenGraph cards, and schema.org `Person` JSON-LD structured data.
-- **Zero-Vulnerability Dependency Tree**: Strict `pnpm.overrides` and modernized ESLint 9 flat configuration.
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## 👋 What I bring
 
-| Layer | Technology |
-| :--- | :--- |
-| **Framework** | [Next.js 16](https://nextjs.org) (App Router, Turbopack) |
-| **Runtime / Library** | [React 19](https://react.dev) |
-| **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com), `@tailwindcss/typography` |
-| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
-| **Image Optimization** | `sharp 0.35`, Next.js Image Optimization |
-| **Icons** | [Lucide React](https://lucide.dev) |
-| **Package Manager** | [pnpm](https://pnpm.io) |
-| **Linting & Quality** | [ESLint 9](https://eslint.org) (Flat Config) |
+**10 years** of shipping production software, from first Android apps in 2016 to senior engineering for a German venture group today. I own work end to end: planning, architecture, delivery and the long tail of keeping it fast and reliable.
+
+- **Enterprise architecture.** Systems designed for today's requirements and tomorrow's scale.
+- **Cloud & integration.** Connectors and services that tie complex platforms together.
+- **Full-stack delivery.** Web, mobile and backend, so nothing gets lost between teams.
+- **Performance & troubleshooting.** Finding the real bottleneck and fixing it.
+- **Technical leadership.** Planning projects, guiding teams and delivering them from start to finish.
+
+## 🏆 Career highlights
+
+| When | Role | Impact |
+| :--- | :--- | :--- |
+| 2022 – now | **Senior Software Engineer**, WizardTales GmbH (Ratingen, Germany) | Engineering across a group of ventures that take on major technical challenges |
+| 2020 – 2021 | **Senior Software Engineer**, Scitara Technologies | Planned, built and managed end-to-end MS OneDrive, MS Excel and IDBS connectors for a cloud lab-data platform serving the life sciences |
+| 2018 – 2020 | **Senior Software Engineer**, Tacto Infomedia | Built the Pedidos delivery app (Bolivia), the CM Chashak event system for the Maharashtra CM, and Lash Delivery for HEB (Texas). 🏅 **Problem Solver of the Year 2018** |
+| 2017 – 2018 | **Software Developer**, Purelogic Labs | Built an Air Quality Index Android app and the server ingesting PM2.5 sensor readings |
+| 2016 – 2017 | **Full Stack Programmer**, Intellinects Ventures | Built a real-time school bus tracking system for parents and administrators |
+
+**Education & credentials:** B.Sc. IT, University of Mumbai · WES-evaluated degree · *Developing Cloud Applications with Node.js and React* (IBM / edX) · more on [Credly](https://www.credly.com/users/sylvester-das).
+
+## 🚀 Products I've built and shipped
+
+Privacy-first tools published under [**Minifyn**](https://www.minifyn.com), live on the Play Store, the Chrome Web Store and the web:
+
+- **[ScamGuard](https://www.minifyn.com/scamguard)**: check suspicious links, QR codes and redirect chains before opening them. [Play Store](https://play.google.com/store/apps/details?id=com.minifyn.linkguard) · [Chrome extension](https://chromewebstore.google.com/detail/scamguard-link-checker/cendbppkhplamddjfnbhgbejnpmfmlbi)
+- **[CensorFyn](https://www.minifyn.com/censorfyn)**: 100% offline redaction of faces, passports, cards, personal text and QR codes. [Play Store](https://play.google.com/store/apps/details?id=com.minifyn.censorfyn)
+- **[ClipFyn](https://www.minifyn.com/clipfyn)**: inspect, crop and prepare videos on-device, with no uploads and no quality loss. [Play Store](https://play.google.com/store/apps/details?id=com.minifyn.clipfyn)
+- **[MiniFyn](https://www.minifyn.com)**: edge URL shortener with bio-links, QR codes, analytics and built-in threat protection.
+
+I also design and build websites for small businesses, for example [jaqilinmakeover.com](https://www.jaqilinmakeover.com), a bilingual booking site for a bridal makeup artist.
+
+## 🧰 Core skills
+
+Next.js · React · Node.js · System Design & Architecture · DevOps · AI/ML & MLOps · Android
+
+## 🤝 Let's work together
+
+Open to senior engineering, architecture and consulting opportunities.
+The fastest way to reach me is **[LinkedIn](https://www.linkedin.com/in/sylvesterdas/)**, or see the full resume at **[sylvesterdas.com](https://www.sylvesterdas.com)**.
 
 ---
 
-## 📁 Project Structure
+<details>
+<summary><b>About this repository</b></summary>
 
-```text
-├── public/               # Static assets (favicons, fonts, images)
-├── src/
-│   ├── app/              # Next.js App Router routes & layouts
-│   │   ├── layout.js     # Root layout with fonts, analytics & JSON-LD
-│   │   ├── page.js       # Main portfolio landing page
-│   │   ├── robots.js     # Dynamic robots.txt
-│   │   └── sitemap.js    # XML sitemap
-│   ├── components/
-│   │   ├── layout/       # Navigation header, mobile drawer
-│   │   ├── sections/     # Hero, About, Skills, Resume, Projects, Contact
-│   │   └── ui/           # Reusable badges, social icons
-│   ├── config/           # SEO configuration
-│   ├── hooks/            # Custom React hooks
-│   └── lib/              # JSON-LD generator
-├── eslint.config.mjs     # ESLint 9 flat configuration
-├── next.config.mjs       # Next.js bundler & image remote patterns
-├── package.json          # Dependencies, scripts & pnpm overrides
-└── tailwind.config.js    # Custom color palette & typography tokens
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js**: `v20.x` or later (tested on Node v22)
-- **pnpm**: `v10.x` (recommended)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/sylvesterdas/resume.git
-   cd resume
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   pnpm install
-   ```
-
-3. **Configure Environment Variables**:
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_SITE_URL=https://www.sylvesterdas.com
-   ```
-
-### Development
-
-Start the local development server with Turbopack and Fast Refresh:
+Source for [sylvesterdas.com](https://www.sylvesterdas.com): Next.js 16 (App Router), React 19, Tailwind CSS, Framer Motion, deployed on Vercel. The projects section pulls live data from the Minifyn API, with a built-in fallback.
 
 ```bash
-pnpm dev
+pnpm install
+echo "NEXT_PUBLIC_SITE_URL=https://www.sylvesterdas.com" > .env.local
+pnpm dev     # http://localhost:3000
+pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 📦 Scripts
-
-| Command | Description |
-| :--- | :--- |
-| `pnpm dev` | Starts Next.js development server with Turbopack |
-| `pnpm build` | Compiles optimized production build |
-| `pnpm start` | Runs the production server |
-| `pnpm lint` | Runs ESLint 9 validation across all project files |
-
----
-
-## 📬 Contact & Connect
-
-- **Website**: [sylvesterdas.com](https://www.sylvesterdas.com)
-- **LinkedIn**: [linkedin.com/in/sylvesterdas](https://www.linkedin.com/in/sylvesterdas/)
-- **GitHub**: [@sylvesterdas](https://github.com/sylvesterdas)
-- **Email**: [you@sylvesterdas.com](mailto:you@sylvesterdas.com)
-- **Credly**: [credly.com/users/sylvester-das](https://www.credly.com/users/sylvester-das)
+</details>
