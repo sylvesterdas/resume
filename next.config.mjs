@@ -15,10 +15,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'cdn.hashnode.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'www.minifyn.com',
       },
       {
@@ -28,10 +24,14 @@ const nextConfig = {
     ],
   },
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-    HASHNODE_PUBLICATION_ID: process.env.HASHNODE_PUBLICATION_ID,
-    HASHNODE_ACCESS_TOKEN: process.env.HASHNODE_ACCESS_TOKEN
-  }
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL
+  },
+  async redirects() {
+    return [
+      { source: '/blog', destination: '/', permanent: true },
+      { source: '/blog/:slug*', destination: '/', permanent: true },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);

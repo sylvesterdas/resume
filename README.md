@@ -17,9 +17,8 @@ Personal developer portfolio and resume website of **Sylvester Das** — Senior 
 - **Interactive Matrix Hero**: Custom HTML5 canvas animation running a smooth, throttled digital rain effect.
 - **Modern App Router Architecture**: Built with Next.js 16 (Turbopack) and React 19 for instantaneous page loads and low Time to First Byte (TTFB).
 - **Personal Projects Showcase**: Highlights privacy-first, on-device mobile tools developed under [Minifyn](https://www.minifyn.com) (*ScamGuard*, *CensorFyn*, *ClipFyn*).
-- **Headless Blog Engine**: Dynamic blog integration powered by the Hashnode GraphQL API with Markdown rendering, GFM support, and syntax highlighting.
 - **Micro-Animations & Smooth Motion**: Fluid transitions and scroll-driven reveals built with Framer Motion.
-- **Enterprise SEO & Structured Data**: Dynamic `sitemap.xml`, `robots.txt`, OpenGraph cards, and schema.org `Person` JSON-LD structured data.
+- **Enterprise SEO & Structured Data**: `sitemap.xml`, `robots.txt`, OpenGraph cards, and schema.org `Person` JSON-LD structured data.
 - **Zero-Vulnerability Dependency Tree**: Strict `pnpm.overrides` and modernized ESLint 9 flat configuration.
 
 ---
@@ -32,8 +31,6 @@ Personal developer portfolio and resume website of **Sylvester Das** — Senior 
 | **Runtime / Library** | [React 19](https://react.dev) |
 | **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com), `@tailwindcss/typography` |
 | **Animations** | [Framer Motion](https://www.framer.com/motion/) |
-| **CMS / Content** | [Hashnode GraphQL API](https://hashnode.com), `graphql-request` |
-| **Markdown Parsing** | `react-markdown`, `remark-gfm`, `react-syntax-highlighter` |
 | **Image Optimization** | `sharp 0.35`, Next.js Image Optimization |
 | **Icons** | [Lucide React](https://lucide.dev) |
 | **Package Manager** | [pnpm](https://pnpm.io) |
@@ -47,20 +44,17 @@ Personal developer portfolio and resume website of **Sylvester Das** — Senior 
 ├── public/               # Static assets (favicons, fonts, images)
 ├── src/
 │   ├── app/              # Next.js App Router routes & layouts
-│   │   ├── api/          # API routes (OG image generation)
-│   │   ├── blog/         # Blog listing & dynamic article routes
 │   │   ├── layout.js     # Root layout with fonts, analytics & JSON-LD
 │   │   ├── page.js       # Main portfolio landing page
 │   │   ├── robots.js     # Dynamic robots.txt
-│   │   └── sitemap.js    # Dynamic XML sitemap generation
+│   │   └── sitemap.js    # XML sitemap
 │   ├── components/
-│   │   ├── blog/         # Blog card & list components
 │   │   ├── layout/       # Navigation header, mobile drawer
 │   │   ├── sections/     # Hero, About, Skills, Resume, Projects, Contact
 │   │   └── ui/           # Reusable badges, social icons
-│   ├── config/           # SEO configurations, constants
+│   ├── config/           # SEO configuration
 │   ├── hooks/            # Custom React hooks
-│   └── lib/              # Hashnode API client, JSON-LD generator
+│   └── lib/              # JSON-LD generator
 ├── eslint.config.mjs     # ESLint 9 flat configuration
 ├── next.config.mjs       # Next.js bundler & image remote patterns
 ├── package.json          # Dependencies, scripts & pnpm overrides
@@ -93,8 +87,6 @@ Personal developer portfolio and resume website of **Sylvester Das** — Senior 
    Create a `.env.local` file in the root directory:
    ```env
    NEXT_PUBLIC_SITE_URL=https://www.sylvesterdas.com
-   HASHNODE_PUBLICATION_ID=your_hashnode_publication_id
-   HASHNODE_ACCESS_TOKEN=your_optional_hashnode_token
    ```
 
 ### Development

@@ -18,8 +18,7 @@ const navigationData = {
     { id: 'skills', label: 'Skills', type: 'scroll', target: 'skills' },
     { id: 'resume', label: 'Resume', type: 'scroll', target: 'resume' },
     { id: 'projects', label: 'Projects', type: 'scroll', target: 'projects' },
-    { id: 'contact', label: 'Contact', type: 'scroll', target: 'contact' },
-    { id: 'blog', label: 'Blog', type: 'link', path: '/blog' }
+    { id: 'contact', label: 'Contact', type: 'scroll', target: 'contact' }
   ]
 }
 
@@ -27,7 +26,6 @@ export default function Navigation() {
   const pathname = usePathname()
   const [activeSection, setActiveSection] = useState(() => {
     if (pathname === '/') return 'home'
-    if (pathname.startsWith('/blog')) return 'blog'
     return ''
   })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
