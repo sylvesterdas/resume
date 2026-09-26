@@ -2,45 +2,20 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ExternalLink, Smartphone } from 'lucide-react'
+import { ExternalLink, Puzzle, Smartphone } from 'lucide-react'
 
-const apps = [
-  {
-    name: 'ScamGuard: Link Checker',
-    tagline: 'Link & QR Threat Checker',
-    description: 'Inspect suspicious links, QR codes, and redirect chains before opening them to safeguard against phishing and malicious links.',
-    packageId: 'com.minifyn.linkguard',
-    webUrl: 'https://www.minifyn.com/scamguard',
-    playstoreURL: 'https://play.google.com/store/apps/details?id=com.minifyn.linkguard',
-    appstoreURL: null,
-    logoUrl: 'https://www.minifyn.com/images/scamguard-logo.png',
-    published: true,
-  },
-  {
-    name: 'CensorFyn: Offline Media Redact',
-    tagline: '100% Offline Media Redaction',
-    description: 'Auto-detect and irreversibly redact faces, passports, credit cards, PII text, and QR codes with true pixel destruction.',
-    packageId: 'com.minifyn.censorfyn',
-    webUrl: 'https://www.minifyn.com/censorfyn',
-    playstoreURL: 'https://play.google.com/store/apps/details?id=com.minifyn.censorfyn',
-    appstoreURL: null,
-    logoUrl: 'https://www.minifyn.com/images/censorfyn/logo_transparent.png',
-    published: false,
-  },
-  {
-    name: 'ClipFyn: Video Preparation',
-    tagline: 'On-Device Video Preparation',
-    description: 'Inspect, crop, fit, and prepare videos locally on Android for broadly compatible sharing without quality degradation or server uploads.',
-    packageId: 'com.minifyn.clipfyn',
-    webUrl: 'https://www.minifyn.com/clipfyn',
-    playstoreURL: 'https://play.google.com/store/apps/details?id=com.minifyn.clipfyn',
-    appstoreURL: null,
-    logoUrl: 'https://www.minifyn.com/images/clipfyn/logo.png',
-    published: false,
-  },
-]
+const STATUS_BADGES = {
+  playstore: 'Live on Play Store',
+  webstore: 'Live on Chrome Web Store',
+  web: 'Live on Web',
+}
 
-export default function Projects() {
+const STORE_LINKS = {
+  app: { label: 'Play Store', title: 'Google Play Store', Icon: Smartphone },
+  extension: { label: 'Web Store', title: 'Chrome Web Store', Icon: Puzzle },
+}
+
+export default function Projects({ projects = [] }) {
   return (
     <section id="projects" className="py-24 bg-primary-dark relative">
       <div className="container mx-auto px-6">
@@ -59,7 +34,7 @@ export default function Projects() {
             <div className="w-2 h-2 bg-accent mx-1" />
           </div>
           <p className="text-text-muted max-w-2xl mx-auto text-base md:text-lg">
-            Privacy-first on-device mobile and web applications developed under{' '}
+            Privacy-first mobile apps, web tools, and browser extensions developed under{' '}
             <a
               href="https://www.minifyn.com"
               target="_blank"
@@ -73,9 +48,12 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {apps.map((app, index) => (
+          {projects.map((app, index) => {
+            const store = STORE_LINKS[app.kind]
+
+            return (
             <motion.div
-              key={app.packageId}
+              key={app.key}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -98,10 +76,10 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {app.published ? (
+                  {app.status !== 'development' ? (
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/15 text-accent border border-accent/30">
                       <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                      Live on Play Store
+                      {STATUS_BADGES[app.status]}
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-text-muted/10 text-text-muted border border-text-muted/20">
@@ -138,21 +116,22 @@ export default function Projects() {
                       <ExternalLink className="w-4 h-4 flex-shrink-0" />
                     </a>
                   )}
-                  {app.published && app.playstoreURL && (
+                  {app.storeUrl && (
                     <a
-                      href={app.playstoreURL}
+                      href={app.storeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-primary-dark/80 hover:bg-primary-dark text-text text-sm font-medium border border-accent/25 hover:border-accent transition-all duration-200 text-center whitespace-nowrap"
-                      title="Google Play Store"
+                      title={store.title}
                     >
-                      <Smartphone className="w-4 h-4 text-accent flex-shrink-0" />
-                      <span>Play Store</span>
+                      <store.Icon className="w-4 h-4 text-accent flex-shrink-0" />
+                      <span>{store.label}</span>
                     </a>
                   )}
                 </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
