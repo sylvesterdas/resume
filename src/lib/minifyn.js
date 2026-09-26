@@ -61,6 +61,7 @@ const FALLBACK_EXTENSIONS = [
 async function fetchList(path, fallback) {
   try {
     const res = await fetch(`${API_BASE}/${path}`, {
+      headers: { Accept: 'application/json' },
       next: { revalidate: REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(5000),
     })
