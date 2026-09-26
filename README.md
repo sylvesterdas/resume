@@ -65,7 +65,7 @@ Reach me at **[you@sylvesterdas.com](mailto:you@sylvesterdas.com)** or on **[Lin
 <details>
 <summary><b>About this repository</b></summary>
 
-Source for [sylvesterdas.com](https://www.sylvesterdas.com): Next.js 16 (App Router), React 19, Tailwind CSS, Framer Motion, deployed on Vercel. The projects section pulls live data from the Minifyn API, with a built-in fallback.
+Source for [sylvesterdas.com](https://www.sylvesterdas.com): Next.js 16 (App Router), React 19, Tailwind CSS, Framer Motion, deployed on GitHub Pages as a static export (rebuilt daily). The projects section pulls live data from the Minifyn API, with a built-in fallback.
 
 ```bash
 pnpm install
