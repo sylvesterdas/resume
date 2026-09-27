@@ -24,6 +24,9 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
+  authors: [{ name: 'Sylvester Das', url: siteConfig.siteUrl }],
+  creator: 'Sylvester Das',
+  publisher: 'Sylvester Das',
   openGraph: siteConfig.openGraph,
   twitter: siteConfig.twitter,
 };

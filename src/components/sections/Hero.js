@@ -30,14 +30,17 @@ export default function Hero() {
             Available for freelance projects
           </div>
 
-          <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold mb-6 tracking-tight">
-            <span className="text-text">Sylvester </span>
-            <span className="text-accent">Das</span>
+          <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold mb-6 tracking-tight leading-[1.05] text-text">
+            Custom software that saves your business <span className="text-accent">hours every week</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-text-muted mb-10 max-w-xl mx-auto lg:mx-0">
-            Freelance software developer with {contact.yearsExperience} years of experience.
-            I build automation, web apps, Flutter mobile apps and Electron desktop apps.
+          <p className="text-lg md:text-xl text-text-muted mb-4 max-w-xl mx-auto lg:mx-0">
+            Automation, websites and web apps, Flutter mobile apps and Electron desktop apps.
+            Fixed quotes, and you own the code.
+          </p>
+
+          <p className="text-sm md:text-base text-text-muted mb-10 font-mono">
+            <span className="text-accent">Sylvester Das</span> · <span className="whitespace-nowrap">developer in {contact.locality}</span> · <span className="whitespace-nowrap">{contact.yearsExperience} years</span>
           </p>
 
           <motion.div

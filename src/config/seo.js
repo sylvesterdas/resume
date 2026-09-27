@@ -9,7 +9,7 @@ export const siteConfig = {
       type: "website",
       locale: "en_IN",
       url: siteUrl,
-      title: "Sylvester Das | Freelance Software Developer in Thiruvananthapuram",
+      title: "Custom software that saves your business hours every week | Sylvester Das",
       description: "10+ years building software. Automation, web apps, Flutter mobile apps and Electron desktop apps for businesses in Kerala, India and worldwide.",
       siteName: "Sylvester Das",
       images: [
@@ -23,7 +23,7 @@ export const siteConfig = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Sylvester Das | Freelance Software Developer in Thiruvananthapuram",
+      title: "Custom software that saves your business hours every week | Sylvester Das",
       description: "10+ years building software. Automation, web apps, Flutter mobile apps and Electron desktop apps for businesses in Kerala, India and worldwide.",
       images: ["/images/og/home.jpg"],
     }
