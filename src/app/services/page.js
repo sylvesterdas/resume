@@ -2,13 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, BadgeCheck, Briefcase, MapPin, MessageCircle } from 'lucide-react'
 import { contact, processSteps, services, whatsappLink } from '@/config/contact'
-import { siteConfig } from '@/config/seo'
+import { ogVersion, siteConfig } from '@/config/seo'
 import ServiceCard from '@/components/ui/ServiceCard'
 
 const title = 'Freelance Software Development Services, Trivandrum'
 const description =
   'Automation, websites, web apps, Flutter mobile apps and Electron desktop apps by a freelance developer in Thiruvananthapuram with 10+ years of experience.'
-const ogImage = { url: '/images/og/services.jpg', width: 1200, height: 630, alt: 'Sylvester Das: freelance software development services' }
+const ogImage = { url: `/images/og/services.jpg?v=${ogVersion}`, width: 1200, height: 630, alt: 'Sylvester Das: freelance software development services' }
 
 export const metadata = {
   title,

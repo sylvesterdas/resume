@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, BadgeCheck, Briefcase, CheckCircle2, MapPin, MessageCircle } from 'lucide-react'
 import { contact, getService, processSteps, services, whatsappLink } from '@/config/contact'
-import { siteConfig } from '@/config/seo'
+import { ogVersion, siteConfig } from '@/config/seo'
 import { generateServiceJsonLd, serializeJsonLd } from '@/lib/generateJsonLd'
 
 export const dynamicParams = false
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   if (!service) return {}
 
   const path = `/services/${service.slug}`
-  const image = `/images/og/${service.slug}.jpg`
+  const image = `/images/og/${service.slug}.jpg?v=${ogVersion}`
   return {
     title: service.metaTitle,
     description: service.seoDescription,

@@ -1,5 +1,8 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sylvesterdas.com";
 
+// Bump when share images change, so LinkedIn and others refetch them instead of using a cached copy
+export const ogVersion = 2;
+
 export const siteConfig = {
     title: "Sylvester Das | Freelance Software Developer, Trivandrum",
     description: "Freelance software developer in Thiruvananthapuram, Kerala. 10+ years building automation, websites, web apps, Flutter mobile apps and Electron desktop apps.",
@@ -14,7 +17,7 @@ export const siteConfig = {
       siteName: "Sylvester Das",
       images: [
         {
-          url: "/images/og/home.jpg",
+          url: `/images/og/home.jpg?v=${ogVersion}`,
           width: 1200,
           height: 630,
           alt: "Sylvester Das - Freelance Software Developer"
@@ -25,6 +28,6 @@ export const siteConfig = {
       card: "summary_large_image",
       title: "Custom software that saves your business hours every week | Sylvester Das",
       description: "10+ years building software. Automation, web apps, Flutter mobile apps and Electron desktop apps for businesses in Kerala, India and worldwide.",
-      images: ["/images/og/home.jpg"],
+      images: [`/images/og/home.jpg?v=${ogVersion}`],
     }
   };
