@@ -1,8 +1,9 @@
 import Navigation from '@/components/layout/Navigation'
+import MatrixRain from '@/components/ui/MatrixRain'
+import ScrollToTop from '@/components/ui/ScrollToTop'
 import localFont from 'next/font/local'
 import { siteConfig } from '@/config/seo';
-import { generatePersonJsonLd } from '@/lib/generateJsonLd';
-import Script from 'next/script'
+import { generateSiteJsonLd, serializeJsonLd } from '@/lib/generateJsonLd';
 import './globals.css'
 
 const geistSans = localFont({
@@ -25,32 +26,28 @@ export const metadata = {
   keywords: siteConfig.keywords,
   openGraph: siteConfig.openGraph,
   twitter: siteConfig.twitter,
-  robots: {
-    index: true,
-    follow: true
-  }
+};
+
+export const viewport = {
+  themeColor: '#1A362F',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generatePersonJsonLd())
+            __html: serializeJsonLd(generateSiteJsonLd())
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-primary`}>
+        <MatrixRain fixed opacity={0.25} />
         <Navigation />
         {children}
-
-        {/* LinkedIn Badge Script */}
-        <Script
-          src="https://platform.linkedin.com/badges/js/profile.js"
-          strategy="afterInteractive"
-        />
+        <ScrollToTop />
       </body>
     </html>
   )

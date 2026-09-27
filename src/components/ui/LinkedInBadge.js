@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Script from "next/script";
 
 export default function LinkedInBadge({
   profileUrl,
@@ -16,6 +17,7 @@ export default function LinkedInBadge({
 
   return (
     <div className="linkedin-badge-container">
+      <Script src="https://platform.linkedin.com/badges/js/profile.js" strategy="lazyOnload" />
       <div
         className="LI-profile-badge"
         data-version="v1"

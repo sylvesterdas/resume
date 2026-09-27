@@ -7,18 +7,27 @@ const blogRedirect = `
   if (p === '/blog' || p.indexOf('/blog/') === 0) location.replace('https://www.minifyn.com' + p);
 `
 
+export const metadata = {
+  title: 'Page not found',
+}
+
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-[#2F4F4F] text-white">
+    <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
       <script dangerouslySetInnerHTML={{ __html: blogRedirect }} />
-      <h1 className="text-7xl md:text-8xl font-bold mb-6 tracking-tight">
-        <span className="text-white">404</span>
-      </h1>
-      <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">Page Not Found</h2>
-      <p className="text-lg md:text-xl text-gray-300 mb-12">Could not find the requested resource</p>
-      <Link href="/" className="px-6 py-3 border-2 border-[#8FBC8F] text-[#8FBC8F] rounded-lg hover:bg-[#8FBC8F] hover:text-white transition duration-300 text-lg font-semibold">
-        Return Home
-      </Link>
-    </div>
+      <div className="p-10 rounded-xl bg-primary-dark/90 backdrop-blur-sm border border-accent/20">
+        <h1 className="text-7xl md:text-8xl font-bold mb-6 tracking-tight text-accent">404</h1>
+        <h2 className="text-2xl md:text-3xl text-text mb-4">Page not found</h2>
+        <p className="text-lg text-text-muted mb-10">Could not find the requested page.</p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link href="/" className="px-6 py-3 rounded-lg bg-accent text-primary font-semibold hover:bg-accent-dark transition-colors">
+            Return home
+          </Link>
+          <Link href="/services" className="px-6 py-3 rounded-lg border border-accent text-accent font-semibold hover:bg-primary-dark transition-colors">
+            See services
+          </Link>
+        </div>
+      </div>
+    </main>
   )
 }

@@ -69,7 +69,7 @@ export default function Resume() {
   ]
 
   return (
-    <section id="resume" className="py-24 bg-primary-dark">
+    <section id="resume" className="py-24 bg-primary-dark/80">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl font-bold text-center mb-20 text-text"
@@ -110,7 +110,7 @@ export default function Resume() {
               >
                 {/* Content Box */}
                 <div className={`w-full md:w-1/2 p-4 ${index % 2 === 0 ? 'md:pr-24' : 'md:pl-24'}`}>
-                  <div className="bg-primary/30 p-6 rounded-lg shadow-lg">
+                  <div className="bg-primary/80 backdrop-blur-sm p-6 rounded-lg shadow-lg">
                     <h4 className="text-text font-bold mb-2 uppercase">{edu.title}</h4>
                     <p className="text-accent mb-2">{edu.institution}</p>
                     <p className="text-text-muted text-sm">{edu.description}</p>
@@ -150,7 +150,7 @@ export default function Resume() {
               >
                 {/* Content Box */}
                 <div className={`w-full md:w-1/2 p-4 ${index % 2 === 0 ? 'md:pr-24' : 'md:pl-24'}`}>
-                  <div className="bg-primary/30 p-6 rounded-lg shadow-lg">
+                  <div className="bg-primary/80 backdrop-blur-sm p-6 rounded-lg shadow-lg">
                     <h4 className="text-text font-bold mb-2 uppercase">{exp.title}</h4>
                     <p className="text-accent mb-2">{exp.company}</p>
                     <p className="text-text-muted text-sm">{exp.description}</p>

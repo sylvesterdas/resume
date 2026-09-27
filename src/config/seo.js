@@ -1,29 +1,30 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sylvesterdas.com";
 
 export const siteConfig = {
-    title: "Sylvester Das | Senior Software Engineer & Enterprise Solutions Architect",
-    description: "Experienced software engineer and solutions architect specializing in enterprise systems, cloud architecture, scalable full-stack applications, and on-device mobile tools.",
-    keywords: "software engineer, enterprise solutions, cloud architecture, Next.js developer, React developer, Node.js expert, Android developer, full-stack developer, Minifyn, ScamGuard, CensorFyn, ClipFyn, tech lead",
+    title: "Sylvester Das | Freelance Software Developer, Trivandrum",
+    description: "Freelance software developer in Thiruvananthapuram, Kerala. 10+ years building automation, websites, web apps, Flutter mobile apps and Electron desktop apps.",
+    keywords: "freelance software developer Thiruvananthapuram, software developer Trivandrum, freelance developer Kerala, automation developer, web application developer, Flutter app developer Kerala, Electron desktop app developer, React developer, Node.js developer, Next.js developer, full stack developer India",
     siteUrl,
     openGraph: {
       type: "website",
-      locale: "en_US",
+      locale: "en_IN",
       url: siteUrl,
-      title: "Sylvester Das | Senior Software Engineer",
-      description: "Enterprise solutions specialist with expertise in scalable architectures",
-      siteName: "Sylvester Das Portfolio",
+      title: "Sylvester Das | Freelance Software Developer in Thiruvananthapuram",
+      description: "10+ years building software. Automation, web apps, Flutter mobile apps and Electron desktop apps for businesses in Kerala, India and worldwide.",
+      siteName: "Sylvester Das",
       images: [
         {
-          url: "/images/general/og.png",
+          url: "/images/og/home.jpg",
           width: 1200,
           height: 630,
-          alt: "Sylvester Das - Senior Software Engineer"
+          alt: "Sylvester Das - Freelance Software Developer"
         }
       ]
     },
     twitter: {
-      handle: "@sylvester_das",
-      cardType: "summary_large_image",
-      images: [`${siteUrl}/images/general/og.png`],
+      card: "summary_large_image",
+      title: "Sylvester Das | Freelance Software Developer in Thiruvananthapuram",
+      description: "10+ years building software. Automation, web apps, Flutter mobile apps and Electron desktop apps for businesses in Kerala, India and worldwide.",
+      images: ["/images/og/home.jpg"],
     }
   };

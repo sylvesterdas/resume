@@ -1,11 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import LinkedInBadge from "@/components/ui/LinkedInBadge";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-primary-dark">
+    <section id="about" className="py-24 bg-primary-dark/80">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-text"
@@ -25,30 +24,30 @@ export default function About() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-accent">
-                Professional Overview
+                What I Do
               </h3>
               <p className="text-text-muted leading-relaxed">
-                As a Senior Software Engineer specializing in enterprise
-                solutions, I bring extensive experience in architecting and
-                delivering scalable applications that drive business
-                transformation. With deep expertise in MEAN/MERN stack
-                development, I focus on creating high-performance systems that
-                adapt to evolving business needs while maintaining exceptional
-                code quality and user experience.
+                I am a software developer with more than 10 years of experience
+                building production systems. I build software that removes
+                repetitive work and gives businesses the tools they actually
+                need: automations that run on their own, web applications,
+                cross-platform mobile apps in Flutter and desktop apps in
+                Electron. I work with startups, small businesses and teams, from
+                Thiruvananthapuram and remotely anywhere.
               </p>
             </div>
 
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-accent">
-                Technical Philosophy
+                How I Work
               </h3>
               <p className="text-text-muted leading-relaxed">
-                My approach combines strategic system design with practical
-                implementation expertise. I believe in building solutions that
-                not only meet current requirements but are also engineered for
-                future scalability. Through my experience with cloud platforms
-                and modern development frameworks, I deliver robust applications
-                that provide measurable business value.
+                I start by understanding the problem, not the technology. You
+                get a clear scope and a fixed quote up front, regular demos while
+                I build, and clean, documented code that you fully own at the
+                end. I prefer simple, maintainable solutions that are easy to
+                run and cheap to host, and I stay available for support after
+                launch.
               </p>
             </div>
 
@@ -59,12 +58,12 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 {
                   [
-                    "Enterprise Architecture",
-                    "Cloud Solutions",
-                    "System Integration",
-                    "Performance Optimization",
-                    "Technical Leadership",
-                    "Innovation Strategy",
+                    "Process Automation",
+                    "Web Applications",
+                    "Flutter Mobile Apps",
+                    "Electron Desktop Apps",
+                    "APIs & Integrations",
+                    "Cloud Deployment",
                   ].map((skill, index) => (
                     <motion.div
                       key={index}
@@ -99,9 +98,8 @@ export default function About() {
               <Image
                 src="/images/general/myphoto.avif"
                 alt="Sylvester Das"
-                width={400}
-                height={400}
-                className="rounded-lg object-cover object-center relative z-10 w-full h-auto"
+                fill
+                className="rounded-lg object-cover object-center z-10"
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
               />

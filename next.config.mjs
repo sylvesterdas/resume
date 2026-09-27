@@ -9,6 +9,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   // Static export for GitHub Pages: no server, so no ISR, redirects or image optimization.
   output: 'export',
+  // Emit dir/index.html so /services and /services/<slug> both resolve on GitHub Pages.
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [

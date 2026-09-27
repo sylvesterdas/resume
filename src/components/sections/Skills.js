@@ -6,8 +6,8 @@ export default function Skills() {
     { name: 'Next.JS', level: 100 },
     { name: 'React.JS', level: 98 },
     { name: 'Node.JS', level: 95 },
-    { name: 'AI/ML', level: 90 },
-    { name: 'MLOps', level: 90 },
+    { name: 'Automation & Scripting', level: 90 },
+    { name: 'Flutter & Electron', level: 90 },
     { name: 'System Design & Architecture', level: 98 },
     { name: 'DevOps', level: 92 }
   ]
@@ -24,7 +24,7 @@ export default function Skills() {
   
 
   return (
-    <section id="skills" className="py-24 bg-primary">
+    <section id="skills" className="py-24 bg-primary/70">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl font-bold text-center mb-20 text-text"

@@ -17,7 +17,7 @@ const STORE_LINKS = {
 
 export default function Projects({ projects = [] }) {
   return (
-    <section id="projects" className="py-24 bg-primary-dark relative">
+    <section id="projects" className="py-24 bg-primary-dark/80 relative">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"

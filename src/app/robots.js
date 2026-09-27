@@ -1,3 +1,5 @@
+import { siteConfig } from '@/config/seo'
+
 export const dynamic = 'force-static'
 
 export default function robots() {
@@ -7,6 +9,6 @@ export default function robots() {
         allow: '/',
         disallow: '/private/',
       },
-      sitemap: `${process.env.NEXT_PUBLIC_SITE_URL}/sitemap.xml`,
+      sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
     };
 }

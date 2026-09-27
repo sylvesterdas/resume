@@ -1,115 +1,99 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import { Mail, Linkedin, Github, Award } from 'lucide-react'
+import { Mail, Linkedin, Github, Award, ArrowRight, ChevronDown } from 'lucide-react'
 import SocialIcon from '@/components/ui/SocialIcon'
+import HeroTerminal from '@/components/ui/HeroTerminal'
+import { contact, mailtoLink } from '@/config/contact'
+
+const scrollTo = (id) => (e) => {
+  e.preventDefault()
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 export default function Hero() {
-  const canvasRef = useRef(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas.getContext('2d')
-    let animationFrameId
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    resizeCanvas()
-    window.addEventListener('resize', resizeCanvas)
-
-    // Increasing font size and adjusting colors for better visibility
-    const fontSize = 16
-    const columns = canvas.width / fontSize
-    const drops = new Array(Math.floor(columns)).fill(1)
-    
-    // Characters to use in the rain
-    const chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    const matrix = () => {
-      const rootStyles = getComputedStyle(document.documentElement);
-      const primaryColor = rootStyles.getPropertyValue('--color-primary').trim();
-      const textColor = rootStyles.getPropertyValue('--color-text').trim();
-
-      ctx.fillStyle = `rgba(${primaryColor}, 0.08)`;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = `rgb(${textColor})`;
-      ctx.font = `${fontSize}px monospace`
-
-      for (let i = 0; i < drops.length; i++) {
-        // Randomly select a character from our char set
-        const text = chars[Math.floor(Math.random() * chars.length)]
-        
-        // Draw the character
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
-
-        // Move the drop down
-        drops[i]++
-
-        // Reset drop to top with random delay
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
-        }
-      }
-    }
-
-    let lastTime = 0
-    const frameInterval = 50 // ms per drop step (20 fps for classic Matrix pace)
-
-    const animate = (currentTime) => {
-      animationFrameId = requestAnimationFrame(animate)
-      if (currentTime - lastTime >= frameInterval) {
-        matrix()
-        lastTime = currentTime
-      }
-    }
-    animationFrameId = requestAnimationFrame(animate)
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas)
-      cancelAnimationFrame(animationFrameId)
-    }
-  }, [])
-
   return (
-    <section id="home" className="h-screen relative overflow-hidden bg-primary">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0"
-        style={{ opacity: 0.3 }}
-      />
-      
-      <div className="relative h-full flex items-center justify-center">
-        <motion.div 
-          className="text-center z-10 px-4"
+    <section id="home" className="min-h-screen relative overflow-hidden flex items-center">
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-primary-dark/80 pointer-events-none" />
+
+      <div className="relative container mx-auto px-6 pt-28 pb-24 grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
+        <motion.div
+          className="text-center lg:text-left z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
         >
-          <motion.div className="text-7xl md:text-8xl font-bold mb-6 tracking-tight">
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-accent/30 bg-primary-dark/70 backdrop-blur-sm text-sm text-text">
+            <span className="relative flex w-2 h-2">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-accent opacity-75 animate-ping" />
+              <span className="relative inline-flex w-2 h-2 rounded-full bg-accent" />
+            </span>
+            Available for freelance projects
+          </div>
+
+          <h1 className="text-6xl md:text-7xl xl:text-8xl font-bold mb-6 tracking-tight">
             <span className="text-text">Sylvester </span>
             <span className="text-accent">Das</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-text-muted mb-10 max-w-xl mx-auto lg:mx-0">
+            Freelance software developer with {contact.yearsExperience} years of experience.
+            I build automation, web apps, Flutter mobile apps and Electron desktop apps.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
+          >
+            <a
+              href="#contact"
+              onClick={scrollTo('contact')}
+              className="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-primary font-semibold hover:bg-accent-dark transition-colors"
+            >
+              Start a project
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="#services"
+              onClick={scrollTo('services')}
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-accent bg-primary/80 backdrop-blur-sm text-accent font-semibold hover:bg-primary-dark transition-colors"
+            >
+              See services
+            </a>
           </motion.div>
-          
-          <motion.p className="text-lg md:text-xl text-text-muted mb-12">
-            Architecting Scalable Solutions for Enterprise Innovation
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="inline-flex space-x-6"
+            className="inline-flex space-x-6 lg:pl-1"
           >
             <SocialIcon href="https://www.linkedin.com/in/sylvesterdas/" icon={Linkedin} tooltipText="LinkedIn Profile" />
             <SocialIcon href="https://github.com/sylvesterdas" icon={Github} tooltipText="GitHub Profile" />
-            <SocialIcon href="mailto:you@sylvesterdas.com" icon={Mail} tooltipText="Send Email" />
+            <SocialIcon href={mailtoLink()} icon={Mail} tooltipText="Send Email" />
             <SocialIcon href="https://www.credly.com/users/sylvester-das" icon={Award} tooltipText="Credly Profile" />
           </motion.div>
         </motion.div>
+
+        <motion.div
+          className="hidden md:flex justify-center lg:justify-end"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          <HeroTerminal />
+        </motion.div>
       </div>
+
+      <a
+        href="#about"
+        onClick={scrollTo('about')}
+        aria-label="Scroll to About"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-accent/70 hover:text-accent animate-bounce"
+      >
+        <ChevronDown className="w-7 h-7" />
+      </a>
     </section>
   )
 }

@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/View_full_resume-000000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="View full resume" />
 </a>
 
-[sylvesterdas.com](https://www.sylvesterdas.com) · [Email](mailto:you@sylvesterdas.com) · [LinkedIn](https://www.linkedin.com/in/sylvesterdas/) · [Credly certifications](https://www.credly.com/users/sylvester-das) · [GitHub](https://github.com/sylvesterdas)
+[sylvesterdas.com](https://www.sylvesterdas.com) · [Email](mailto:sylvesterdas.dev@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sylvesterdas/) · [Credly certifications](https://www.credly.com/users/sylvester-das) · [GitHub](https://github.com/sylvesterdas)
 
 </div>
 
@@ -58,7 +58,7 @@ Next.js · React · Node.js · System Design & Architecture · DevOps · AI/ML &
 ## 🤝 Let's work together
 
 Open to senior engineering, architecture and consulting opportunities.
-Reach me at **[you@sylvesterdas.com](mailto:you@sylvesterdas.com)** or on **[LinkedIn](https://www.linkedin.com/in/sylvesterdas/)**, or see the full resume at **[sylvesterdas.com](https://www.sylvesterdas.com)**.
+Reach me at **[sylvesterdas.dev@gmail.com](mailto:sylvesterdas.dev@gmail.com)** or on **[LinkedIn](https://www.linkedin.com/in/sylvesterdas/)**, or see the full resume at **[sylvesterdas.com](https://www.sylvesterdas.com)**.
 
 ---
 

@@ -15,6 +15,7 @@ const navigationData = {
   items: [
     { id: 'home', label: 'Home', type: 'link', path: '/' },
     { id: 'about', label: 'About', type: 'scroll', target: 'about' },
+    { id: 'services', label: 'Services', type: 'scroll', target: 'services' },
     { id: 'skills', label: 'Skills', type: 'scroll', target: 'skills' },
     { id: 'resume', label: 'Resume', type: 'scroll', target: 'resume' },
     { id: 'projects', label: 'Projects', type: 'scroll', target: 'projects' },
@@ -75,6 +76,15 @@ export default function Navigation() {
     setIsMenuOpen(false)
   }
 
+  // Already on the homepage, a Link to "/" doesn't move the page, so scroll up ourselves.
+  const handleHomeClick = (e) => {
+    setIsMenuOpen(false)
+    if (pathname !== '/') return
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (window.location.hash) window.history.replaceState(null, '', '/')
+  }
+
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-sm"
@@ -84,7 +94,7 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="relative w-8 h-8">
+          <Link href="/" onClick={handleHomeClick} className="relative w-8 h-8">
             <Image
               src={navigationData.logo.src}
               alt={navigationData.logo.alt}
@@ -97,7 +107,7 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex space-x-8">
-            <NavItems items={navigationData.items} activeSection={activeSection} scrollToSection={scrollToSection} />
+            <NavItems items={navigationData.items} activeSection={activeSection} scrollToSection={scrollToSection} onHomeClick={handleHomeClick} />
           </div>
 
           <button
@@ -117,7 +127,7 @@ export default function Navigation() {
             exit={{ opacity: 0, y: -20 }}
           >
             <div className="flex flex-col space-y-4">
-              <NavItems items={navigationData.items} activeSection={activeSection} scrollToSection={scrollToSection} />
+              <NavItems items={navigationData.items} activeSection={activeSection} scrollToSection={scrollToSection} onHomeClick={handleHomeClick} />
             </div>
           </motion.div>
         )}
@@ -126,17 +136,20 @@ export default function Navigation() {
   )
 }
 
-function NavItems({ items, activeSection, scrollToSection }) {
+function NavItems({ items, activeSection, scrollToSection, onHomeClick }) {
   const pathname = usePathname()
 
   return items.map((item) => {
-    const isActive = item.type === 'link' ? pathname === item.path : activeSection === item.target
+    const isActive = item.type === 'link'
+      ? pathname === item.path && (pathname !== '/' || activeSection === item.id)
+      : activeSection === item.target
 
     if (item.type === 'link') {
       return (
         <Link
           key={item.id}
           href={item.path}
+          onClick={onHomeClick}
           className={`relative text-text hover:text-accent transition-colors ${
             isActive ? 'text-accent' : ''
           }`}
