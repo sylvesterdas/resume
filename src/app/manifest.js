@@ -6,7 +6,7 @@ export default function manifest() {
     short_name: 'Sylvester Das',
     description: 'Freelance software developer in Thiruvananthapuram, Kerala: automation, web apps, Flutter and Electron apps.',
     start_url: '/',
-    display: 'standalone',
+    display: 'browser',
     background_color: '#1A362F',
     theme_color: '#1A362F',
     icons: [
