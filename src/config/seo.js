@@ -1,7 +1,7 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sylvesterdas.com";
 
 // Bump when share images change, so LinkedIn and others refetch them instead of using a cached copy
-export const ogVersion = 2;
+export const ogVersion = 3;
 
 export const siteConfig = {
     title: "Sylvester Das | Freelance Software Developer, Trivandrum",
