@@ -40,7 +40,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <main className="min-h-screen">
+    <main>
       <div className="relative overflow-hidden pt-28 pb-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary/70 pointer-events-none" />
         <div className="relative container mx-auto px-6 max-w-6xl">

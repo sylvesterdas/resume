@@ -28,6 +28,10 @@ const nextConfig = {
       },
     ],
   },
+  // Inline the CSS into each page so layout never depends on a second fetch (Google's renderer sometimes skips it)
+  experimental: {
+    inlineCss: true,
+  },
   env: {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL
   },

@@ -12,16 +12,12 @@ const scrollTo = (id) => (e) => {
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden flex items-center">
+    <section id="home" className="min-h-[min(100svh,56rem)] relative overflow-hidden flex items-center">
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-primary-dark/80 pointer-events-none" />
 
       <div className="relative container mx-auto px-6 pt-28 pb-24 grid lg:grid-cols-[1.15fr_1fr] gap-14 items-center">
-        <motion.div
-          className="text-center lg:text-left z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-        >
+        {/* No fade-in on the copy: it must be visible before JS runs, for crawlers and slow phones */}
+        <div className="text-center lg:text-left z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-accent/30 bg-primary-dark/70 backdrop-blur-sm text-sm text-text">
             <span className="relative flex w-2 h-2">
               <span className="absolute inline-flex w-full h-full rounded-full bg-accent opacity-75 animate-ping" />
@@ -43,10 +39,7 @@ export default function Hero() {
             <span className="text-accent">Sylvester Das</span> · <span className="whitespace-nowrap">developer in {contact.locality}</span> · <span className="whitespace-nowrap">{contact.yearsExperience} years</span>
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+          <div
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
           >
             <a
@@ -64,20 +57,15 @@ export default function Hero() {
             >
               See services
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="inline-flex space-x-6 lg:pl-1"
-          >
+          <div className="inline-flex space-x-6 lg:pl-1">
             <SocialIcon href="https://www.linkedin.com/in/sylvesterdas/" icon={Linkedin} tooltipText="LinkedIn Profile" />
             <SocialIcon href="https://github.com/sylvesterdas" icon={Github} tooltipText="GitHub Profile" />
             <SocialIcon href={mailtoLink()} icon={Mail} tooltipText="Send Email" />
             <SocialIcon href="https://www.credly.com/users/sylvester-das" icon={Award} tooltipText="Credly Profile" />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         <motion.div
           className="hidden md:flex justify-center lg:justify-end"

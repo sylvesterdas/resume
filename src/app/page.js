@@ -15,7 +15,7 @@ export default async function Home() {
   const projects = await getMinifynProjects()
 
   return (
-    <main className="min-h-screen">
+    <main>
       <Hero />
       <About />
       <Services />

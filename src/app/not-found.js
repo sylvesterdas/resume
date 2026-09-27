@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+    <main className="flex flex-col items-center justify-center min-h-[min(100svh,48rem)] px-6 text-center">
       <script dangerouslySetInnerHTML={{ __html: blogRedirect }} />
       <div className="p-10 rounded-xl bg-primary-dark/90 backdrop-blur-sm border border-accent/20">
         <h1 className="text-7xl md:text-8xl font-bold mb-6 tracking-tight text-accent">404</h1>

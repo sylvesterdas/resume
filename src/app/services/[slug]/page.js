@@ -52,7 +52,7 @@ export default async function ServicePage({ params }) {
   const others = services.filter((s) => s.slug !== service.slug)
 
   return (
-    <main className="min-h-screen">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(generateServiceJsonLd(service)) }}
