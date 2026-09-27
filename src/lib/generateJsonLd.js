@@ -63,6 +63,7 @@ export function generateSiteJsonLd() {
         name: `${contact.name}: Freelance Software Development`,
         url: siteConfig.siteUrl,
         image: `${siteConfig.siteUrl}/images/og/home.jpg`,
+        logo: `${siteConfig.siteUrl}/images/general/icon-512.png`,
         description: siteConfig.description,
         email: contact.email,
         telephone: contact.telephone,

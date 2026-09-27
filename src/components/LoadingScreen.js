@@ -20,11 +20,11 @@ export default function LoadingScreen() {
         >
           <div className="w-12 h-12 mx-auto mb-4">
             <Image
-              src="/favicon.ico"
+              src="/images/general/logo.svg"
               alt="Sylvester Das"
               width={48}
               height={48}
-              className="object-contain brightness-0 invert"
+              className="object-contain"
               priority
             />
           </div>

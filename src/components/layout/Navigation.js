@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation'
 
 const navigationData = {
   logo: {
-    src: '/favicon.ico',
+    src: '/images/general/logo.svg',
     alt: 'Sylvester Das'
   },
   items: [
@@ -100,7 +100,7 @@ export default function Navigation() {
               alt={navigationData.logo.alt}
               width={32}
               height={32}
-              className="object-contain brightness-0 invert"
+              className="object-contain"
               priority
               sizes="32px"
             />
